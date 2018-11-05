@@ -2,7 +2,7 @@ from chatterbot import ChatBot
 import telepot
 
 bot = ChatBot('Test', trainer='chatterbot.trainers.ChatterBotCorpusTrainer')
-telegram = telepot.Bot('671237241:AAE3HQOzS-iqPue2XZRyiARrXDTQnecuDic')
+telegram = telepot.Bot('TOKEN')
 bot.train('chatterbot.corpus.portuguese')
 
 def recebendoMsg(msg):
@@ -10,7 +10,7 @@ def recebendoMsg(msg):
     pergunta = msg['text']
     resposta = bot.get_response(pergunta)
     r = str(resposta)
-    telegram.sendMessage(747002342,r)
+    telegram.sendMessage(IDchave,r)
     print('Bot: ', resposta)
 
 
